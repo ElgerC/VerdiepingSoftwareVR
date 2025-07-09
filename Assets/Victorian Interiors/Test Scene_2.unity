@@ -2303,10 +2303,16 @@ MonoBehaviour:
   furnitureObject: {fileID: 377320781}
   rb: {fileID: 377320794}
   dragObject: {fileID: 377320793}
-  mat: {fileID: 0}
-  meshRenderer: {fileID: 0}
+  mat: {fileID: 2100000, guid: d7a7ec3856f51b241940c102d5153e25, type: 2}
+  mat2: {fileID: 0}
+  meshRenderer: {fileID: 377320801}
   goalPosition: {x: 2.83, y: 0, z: 3.74}
-  minDist: 0
+  minDist: 0.5
+--- !u!23 &377320801 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23483477218653914, guid: 9d3ad311ad9df5d4a8b8497ace77af70, type: 3}
+  m_PrefabInstance: {fileID: 908791556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &379964350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4968347581941918, guid: b33348113c81ccd44a7b624ba23d22ae, type: 3}
@@ -6497,6 +6503,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4283874249558586, guid: 447b2b46b16d9e34cae9521f49502560, type: 3}
   m_PrefabInstance: {fileID: 258350757}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &1387133913 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23564346865957206, guid: 72189a2701d453047bcf01f2cc96501a, type: 3}
+  m_PrefabInstance: {fileID: 1941190821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1397755868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6947,11 +6958,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   furnitureObject: {fileID: 1141835675}
   rb: {fileID: 1432746067}
-  dragObject: {fileID: 1432746072}
-  mat: {fileID: 0}
-  meshRenderer: {fileID: 0}
+  dragObject: {fileID: 377320793}
+  mat: {fileID: 2100000, guid: d7a7ec3856f51b241940c102d5153e25, type: 2}
+  mat2: {fileID: 0}
+  meshRenderer: {fileID: 1432746080}
   goalPosition: {x: 0, y: 0, z: -1.04}
-  minDist: 0.3
+  minDist: 2
+--- !u!23 &1432746080 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8689616615426085228, guid: d726c6a2e5bee3d4ba3a5c70208d9e93, type: 3}
+  m_PrefabInstance: {fileID: 2116622910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1437367646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4312075801290312, guid: 09a6734141388f741addf9fa4f6a0edf, type: 3}
@@ -9052,10 +9069,11 @@ MonoBehaviour:
   furnitureObject: {fileID: 1941190822}
   rb: {fileID: 1941190826}
   dragObject: {fileID: 1941190824}
-  mat: {fileID: 0}
-  meshRenderer: {fileID: 0}
-  goalPosition: {x: -0.46, y: 0, z: 5.78}
-  minDist: 0.3
+  mat: {fileID: 2100000, guid: d7a7ec3856f51b241940c102d5153e25, type: 2}
+  mat2: {fileID: 0}
+  meshRenderer: {fileID: 1387133913}
+  goalPosition: {x: -0.5, y: 0, z: 5.78}
+  minDist: 1
 --- !u!54 &1941190826
 Rigidbody:
   m_ObjectHideFlags: 0

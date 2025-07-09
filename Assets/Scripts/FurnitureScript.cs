@@ -10,12 +10,18 @@ public class FurnitureScript : MonoBehaviour
     [SerializeField] private DragableObject dragObject;
 
     [SerializeField] private Material mat;
+    [SerializeField] private Material mat2;
     [SerializeField] private MeshRenderer meshRenderer;
 
     public Vector3 goalPosition;
     public float minDist;
 
     private bool onGoal;
+
+    private void Awake()
+    {
+        mat2 = meshRenderer.material;
+    }
 
     private void Update()
     {
@@ -29,7 +35,7 @@ public class FurnitureScript : MonoBehaviour
                 ReasignMats(true);
                 onGoal = true;
             }
-        } else
+        } else if (onGoal) 
         {
             FurnitureManager.Instance.furnitureList.Add(this);
             ReasignMats(false);
@@ -39,15 +45,14 @@ public class FurnitureScript : MonoBehaviour
 
     private void ReasignMats(bool withExtraMat)
     {
-        List<Material> mats = new List<Material>();
-
-        mats.Add(meshRenderer.materials[0]);
-        if (withExtraMat)
+        if(withExtraMat)
         {
-            mats.Add(mat);
+            meshRenderer.material = mat;
         }
-        
-        meshRenderer.materials = mats.ToArray();
+        else
+        {
+             meshRenderer.material = mat2;
+        }
     }
 
     private void OnDrawGizmos()
