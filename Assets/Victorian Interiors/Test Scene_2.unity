@@ -3275,7 +3275,6 @@ MonoBehaviour:
   body: {fileID: 377320794}
   playerTrans: {fileID: 469262202}
   offset: {x: 0, y: 0, z: 0}
-  moveSpeed: 5
   whileDraggingSpeed: 0.4
   objectDistance: 0.2
   playerMovementSlower: {fileID: 1015719227}
@@ -5278,7 +5277,7 @@ MonoBehaviour:
   furnitureList:
   - {fileID: 1432746078}
   - {fileID: 377320799}
-  - {fileID: 0}
+  - {fileID: 1031047950}
 --- !u!4 &639400667
 Transform:
   m_ObjectHideFlags: 0
@@ -5435,7 +5434,7 @@ MonoBehaviour:
   grabbedpos: {x: 0, y: 0, z: 0}
   heldRot: {x: 90, y: 0, z: 0}
   heldpos: {x: 0, y: 0, z: 0}
-  heldColSize: {x: 0.03, y: 0.03, z: 0.03}
+  heldColSize: {x: 0.01, y: 0.01, z: 0.03}
   heldPoint: {fileID: 1528296857}
   norColSize: {x: 0.01, y: 0.01, z: 0.01}
   minTravelDist: 0.3
@@ -6978,6 +6977,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1456252664072022, guid: 3b31857525046034989fe2b3f6f987bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1031047942}
+    - targetCorrespondingSourceObject: {fileID: 1456252664072022, guid: 3b31857525046034989fe2b3f6f987bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1031047949}
+    - targetCorrespondingSourceObject: {fileID: 1456252664072022, guid: 3b31857525046034989fe2b3f6f987bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1031047950}
   m_SourcePrefab: {fileID: 100100000, guid: 3b31857525046034989fe2b3f6f987bc, type: 3}
 --- !u!1 &1031047941 stripped
 GameObject:
@@ -6996,13 +7001,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9370d2a7f1da314bb05903dd7079fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 377320787}
-  body: {fileID: 377320794}
+  interactable: {fileID: 1031047944}
+  body: {fileID: 1031047949}
   playerTrans: {fileID: 469262202}
   offset: {x: 0, y: 0, z: 0}
-  moveSpeed: 5
   whileDraggingSpeed: 0.4
-  objectDistance: 0.2
+  objectDistance: 0.4
   playerMovementSlower: {fileID: 1015719227}
 --- !u!65 &1031047943
 BoxCollider:
@@ -7074,7 +7078,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 377320793}
+      - m_Target: {fileID: 1031047942}
         m_TargetAssemblyTypeName: DragableObject, Assembly-CSharp
         m_MethodName: StartDrag
         m_Mode: 1
@@ -7089,7 +7093,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 377320793}
+      - m_Target: {fileID: 1031047942}
         m_TargetAssemblyTypeName: DragableObject, Assembly-CSharp
         m_MethodName: EndDrag
         m_Mode: 1
@@ -7122,6 +7126,58 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
+--- !u!23 &1031047946 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23540634009698436, guid: 3b31857525046034989fe2b3f6f987bc, type: 3}
+  m_PrefabInstance: {fileID: 1031047940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1031047949
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031047941}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 1
+--- !u!114 &1031047950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031047941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc74d85a58e5e04f86cc34fd4d5d16e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureObject: {fileID: 1031047941}
+  rb: {fileID: 1031047949}
+  dragObject: {fileID: 1031047942}
+  mat: {fileID: 2100000, guid: d7a7ec3856f51b241940c102d5153e25, type: 2}
+  mat2: {fileID: 0}
+  meshRenderer: {fileID: 1031047946}
+  goalPosition: {x: -0.31, y: 0, z: 6.4}
+  minDist: 0.5
 --- !u!4 &1035736707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4354458936023278, guid: f2da139fdb8c88745b79f1879a5541f3, type: 3}
@@ -10224,7 +10280,6 @@ MonoBehaviour:
   body: {fileID: 1432746067}
   playerTrans: {fileID: 469262202}
   offset: {x: 0, y: 0, z: 0}
-  moveSpeed: 0
   whileDraggingSpeed: 0.2
   objectDistance: 0.2
   playerMovementSlower: {fileID: 1015719227}
@@ -10365,7 +10420,7 @@ MonoBehaviour:
   mat2: {fileID: 0}
   meshRenderer: {fileID: 1432746080}
   goalPosition: {x: 0, y: 0, z: -1.04}
-  minDist: 2
+  minDist: 0.5
 --- !u!23 &1432746080 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8689616615426085228, guid: d726c6a2e5bee3d4ba3a5c70208d9e93, type: 3}
@@ -10434,6 +10489,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718513916334437810, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_PlayHoverEntered
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718513916334437810, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_AllowHoverHapticsWhileSelecting
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -10543,6 +10606,10 @@ PrefabInstance:
     - target: {fileID: 6693052528577237899, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_CurrentTrackingState
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559622106701032237, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_PlayHoverEntered
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8877177980677234388, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_EnableFarCasting

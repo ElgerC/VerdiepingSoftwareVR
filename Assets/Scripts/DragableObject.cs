@@ -12,7 +12,7 @@ public class DragableObject : MonoBehaviour
     private Vector3 middlePos;
 
     private Vector3 goalPos;
-    [SerializeField] private float moveSpeed;
+    //[SerializeField] private float moveSpeed;
     [SerializeField] private float whileDraggingSpeed;
     [SerializeField] private float objectDistance;
 
@@ -22,6 +22,7 @@ public class DragableObject : MonoBehaviour
     {
         if (interactable.interactorsSelecting.Count > 1)
         {
+            Debug.Log("Grabbed");
             playerMovementSlower.SlowPlayer(whileDraggingSpeed);
 
             GenerateMiddlePoint();
