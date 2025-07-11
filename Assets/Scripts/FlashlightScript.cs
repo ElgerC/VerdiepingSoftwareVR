@@ -76,7 +76,7 @@ public class FlashlightScript : MonoBehaviour
         if (inHolder)
         {
             state = grabState.held;
-            //rb.isKinematic = true;
+            rb.isKinematic = true;
             transform.parent = heldPoint;
             col.size = heldColSize;
         }
@@ -84,7 +84,7 @@ public class FlashlightScript : MonoBehaviour
         {
             state = grabState.released;
             transform.parent = null;
-            //rb.isKinematic = false;
+            rb.isKinematic = false;
             col.size = norColSize;
         }
     }
