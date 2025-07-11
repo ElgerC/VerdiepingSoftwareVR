@@ -68,7 +68,7 @@ public class FlashlightScript : MonoBehaviour
         }
         state = grabState.grabbed;
         transform.parent = interactable.interactorsSelecting[0].transform;
-        rb.isKinematic = true;
+        //rb.isKinematic = true;
     }
 
     public void Release()
